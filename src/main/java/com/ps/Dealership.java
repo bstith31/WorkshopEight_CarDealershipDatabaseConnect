@@ -1,5 +1,7 @@
 package com.ps;
 
+import com.ps.models.Vehicle;
+
 import java.util.ArrayList;
 import java.util.List;
 

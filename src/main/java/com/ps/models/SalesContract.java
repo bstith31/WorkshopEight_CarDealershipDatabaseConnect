@@ -1,5 +1,5 @@
 
-package com.ps;
+package com.ps.models;
 
 public class SalesContract extends Contract {
     private double salesTaxRate;

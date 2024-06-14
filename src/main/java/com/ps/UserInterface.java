@@ -1,5 +1,11 @@
 package com.ps;
 
+import com.ps.models.Contract;
+import com.ps.models.LeaseContract;
+import com.ps.models.SalesContract;
+import com.ps.models.Vehicle;
+import org.apache.commons.dbcp2.BasicDataSource;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -7,9 +13,24 @@ public class UserInterface {
     private Dealership dealership;
     private static Scanner scanner = new Scanner(System.in);
 
-    public void display(){
-        init();
+    // private static VehicleDAO vehicleDAO
+    // private static LeaseDAO leaseDAO
+    // private static SaleDao saleDao
 
+    private void init(String[] args){
+        BasicDataSource basicDataSource = new BasicDataSource();
+        basicDataSource.setUrl("jdbc:mysql://localhost:3306/`dealership_dbconnect`");
+        basicDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        basicDataSource.setUsername(args[0]);
+        basicDataSource.setPassword(args[1]);
+        // vehicleDAO = new VehicleDAO(basicDataSource);
+        // leaseDAO = new LeaseDAO(basicDataSource);
+        // saleDao = new SaleDao(basicDataSource);
+    }
+
+
+    public void display(String[] args){
+        init(args);
         int mainMenuCommand;
 
         do{
@@ -65,9 +86,6 @@ public class UserInterface {
                     break;
             }
         } while(mainMenuCommand != 99);
-    }
-
-    private void init(){
     }
 
     private void displayVehicles(List<Vehicle> vehicles){

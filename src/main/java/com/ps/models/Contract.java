@@ -1,6 +1,6 @@
-package com.ps;
+package com.ps.models;
 
-abstract class Contract {
+public abstract class Contract {
     private String date;
     private String customerName;
     private String customerEmail;

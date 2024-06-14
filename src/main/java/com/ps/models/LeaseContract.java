@@ -1,4 +1,4 @@
-package com.ps;
+package com.ps.models;
 
 public class LeaseContract extends Contract {
     private double leaseFeeRate;
